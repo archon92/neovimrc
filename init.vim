@@ -81,3 +81,8 @@ endif
 
 "nerdtree toggle
 map <C-n> :NERDTreeToggle<CR>
+
+"map ESC to caps(ESC seems to far)
+inoremap jj <Esc> `^
+
+
