@@ -48,7 +48,8 @@ set number " line numbering
 "SET ENCODING
 set encoding=utf-8
 
-"higihlight current row and column
+"Set ve=all to move using space and backspace after eol
+set ve=all
 
 "enable credo in neomake
 let g:neomake_elixir_enabled_makers = ['mix', 'credo']
