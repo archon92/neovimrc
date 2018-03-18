@@ -32,6 +32,11 @@ Plug 'vim-airline/vim-airline-themes'
 "Nerdtree
 Plug 'scrooloose/nerdtree'
 
+"java stuff
+
+Plug 'sbdchd/neoformat'
+Plug 'artur-shaik/vim-javacomplete2'
+
 call plug#end()
 
 " Sane tabs
@@ -85,5 +90,33 @@ map <C-n> :NERDTreeToggle<CR>
 
 "map ESC to caps(ESC seems to far)
 inoremap jj <Esc> `^
+
+
+"java development
+
+"""""""""""""""""""""""""
+""""    deoplete     """"
+"""""""""""""""""""""""""
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
+let g:deoplete#sources = {}
+let g:deoplete#sources._ = []
+let g:deoplete#file#enable_buffer_path = 1
+
+
+"""""""""""""""""""""""""
+""""  Java Complete  """"
+"""""""""""""""""""""""""
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+
+"""""""""""""""""""""""""
+""""     neoformat   """"
+"""""""""""""""""""""""""
+augroup astyle
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
 
 
